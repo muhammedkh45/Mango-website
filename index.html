@@ -40,6 +40,7 @@
       --pill-border: rgba(200, 146, 42, 0.25);
       --wa-float-shadow: rgba(37, 211, 102, 0.35);
       --input-bg: rgba(10, 8, 6, 0.5);
+      --mobile-nav-bg: rgba(10, 8, 6, 0.97);
     }
 
     body.light-theme {
@@ -59,6 +60,7 @@
       --pill-border: rgba(200, 146, 42, 0.15);
       --wa-float-shadow: rgba(37, 211, 102, 0.15);
       --input-bg: rgba(255, 255, 255, 0.7);
+      --mobile-nav-bg: rgba(255, 255, 255, 0.97);
     }
 
     html {
@@ -105,7 +107,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1292,7 +1294,7 @@
       position: fixed;
       inset: 0;
       z-index: 150;
-      background: rgba(10, 8, 6, 0.97);
+      background: var(--mobile-nav-bg);
       flex-direction: column;
       align-items: center;
       justify-content: center;
