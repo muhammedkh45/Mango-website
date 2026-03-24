@@ -20,6 +20,27 @@
       box-sizing: border-box;
     }
 
+    @font-face {
+      font-family: 'Kleptocracy';
+      src: url('kleptocracy%20titling%20rg.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Kleptocracy';
+      src: url('kleptocracy%20titling%20cd%20lt.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Jonathan Signature';
+      src: url('Jonathan%20Signature.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     :root {
       --bg: #0a0806;
       --surface: #120f0b;
@@ -139,14 +160,37 @@
       color: var(--bg);
     }
 
-    .nav-logo {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 300;
-      font-size: 20px;
-      letter-spacing: 0.4em;
-      color: var(--light);
+    .nav-logo-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      text-transform: uppercase;
+    }
+
+    .nav-logo-mango {
+      font-family: "Kleptocracy", "Cormorant Garamond", sans-serif;
+      font-size: 56px;
+      font-weight: 100;
+      color: var(--light);
+      position: relative;
+      z-index: 2;
+      letter-spacing: 0.06em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav-logo-perfumes {
+      font-family: "Jonathan Signature", cursive;
+      font-size: 54px;
+      color: #e60000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      z-index: 1;
+      opacity: 0.85;
+      white-space: nowrap;
+      pointer-events: none;
     }
 
     .nav-links {
@@ -1652,7 +1696,10 @@
 
   <!-- Nav -->
   <nav>
-    <a href="#" class="nav-logo">M A N<span style="display:inline-block;transform:scaleX(-1);">G</span> O</a>
+    <a href="#" class="nav-logo-container">
+      <span class="nav-logo-perfumes">Perfumes</span>
+      <span class="nav-logo-mango">man<span style="display:inline-block;transform:scaleX(-1); margin-left:-0.06em; margin-right: 0.06em;">g</span>o</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#products">عطورنا</a></li>
       <li><a href="#why">ليه مانجو؟</a></li>
@@ -1723,8 +1770,10 @@
         <div class="bottle-wrap">
           <div class="bottle-inner">
             <div class="glow-orb"></div>
-            <img src="mango.jpg" alt="Mango Perfume Logo"
-              style="max-width:80%;max-height:80%;object-fit:contain;position:relative;z-index:2;" />
+            <div class="nav-logo-container" style="transform: scale(1.8); z-index: 2;">
+              <span class="nav-logo-perfumes">Perfumes</span>
+              <span class="nav-logo-mango">man<span style="display:inline-block;transform:scaleX(-1); margin-left:-0.06em; margin-right: 0.06em;">g</span>o</span>
+            </div>
           </div>
           <div class="badge">
             <div class="badge-in"><span>✦</span><span>Est. Egypt</span></div>
