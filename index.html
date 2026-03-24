@@ -1,0 +1,2138 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="mango.jpg" />
+  <title>Mango Perfume — عطرك هويتك</title>
+  <meta name="description"
+    content="مانجو بيرفيوم — أكثر من 300 عطر فاخر. العاشر من رمضان. اللي جرب مانجو بيرجعله تاني." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tajawal:wght@300;400;500;700&family=Montserrat:wght@200;300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0806;
+      --surface: #120f0b;
+      --card: #1a1410;
+      --light: #f5f3ef;
+      --beige: #e8e0d5;
+      --muted: #7a7065;
+      --accent: #c8922a;
+      --gold: #d4a84b;
+      --wood: #a67c52;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--light);
+      font-family: "Tajawal", sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── Cursor ── */
+    .cur,
+    .cur-r {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .cur {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+    }
+
+    .cur-r {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(200, 146, 42, 0.35);
+      transition:
+        width 0.3s,
+        height 0.3s,
+        opacity 0.3s;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: linear-gradient(to bottom,
+          rgba(10, 8, 6, 0.95),
+          transparent);
+    }
+
+    .nav-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 0.4em;
+      color: var(--light);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--light);
+    }
+
+    .nav-wa {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(200, 146, 42, 0.4);
+      padding: 9px 22px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-wa:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 60% 40%,
+          rgba(200, 146, 42, 0.1) 0%,
+          transparent 60%),
+        radial-gradient(ellipse at 10% 80%,
+          rgba(164, 120, 80, 0.07) 0%,
+          transparent 50%);
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .vline {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom,
+          transparent,
+          rgba(200, 146, 42, 0.12) 40%,
+          rgba(200, 146, 42, 0.12) 60%,
+          transparent);
+    }
+
+    .vline-l {
+      left: 48px;
+    }
+
+    .vline-r {
+      right: 48px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      padding: 100px 48px 80px 120px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* left */
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .eyebrow-line {
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .eyebrow span {
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(60px, 8.5vw, 120px);
+      font-weight: 300;
+      line-height: 0.88;
+      color: var(--light);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.6s forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-ar {
+      font-family: "Tajawal", sans-serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.75s forwards;
+    }
+
+    .warning-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(200, 146, 42, 0.1);
+      border: 1px solid rgba(200, 146, 42, 0.25);
+      padding: 10px 20px;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.85s forwards;
+    }
+
+    .warning-pill span:first-child {
+      font-size: 16px;
+    }
+
+    .warning-pill p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 13px;
+      color: var(--beige);
+      line-height: 1.5;
+    }
+
+    .warning-pill strong {
+      color: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 1s forwards;
+    }
+
+    .btn-primary {
+      font-family: "Tajawal", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 14px 36px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+      display: inline-block;
+    }
+
+    .btn-primary::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      transition: left 0.4s;
+    }
+
+    .btn-primary:hover::before {
+      left: 0;
+    }
+
+    .btn-primary span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-ghost {
+      font-family: "Tajawal", sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+    }
+
+    .btn-ghost:hover {
+      color: var(--light);
+    }
+
+    /* right visual */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeLeft 0.9s ease 0.9s forwards;
+    }
+
+    .bottle-wrap {
+      position: relative;
+      width: 240px;
+      height: 400px;
+      margin-left: auto;
+      overflow: hidden;
+    }
+
+    .bottle-wrap::before {
+      content: "";
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      right: 16px;
+      bottom: 16px;
+      border: 1px solid rgba(200, 146, 42, 0.18);
+      pointer-events: none;
+    }
+
+    .bottle-wrap::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: -16px;
+      bottom: -16px;
+      border: 1px solid rgba(200, 146, 42, 0.07);
+      pointer-events: none;
+    }
+
+    .bottle-inner {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse at 35% 25%,
+          rgba(200, 146, 42, 0.22) 0%,
+          transparent 60%),
+        radial-gradient(ellipse at 70% 75%,
+          rgba(164, 120, 80, 0.18) 0%,
+          transparent 50%),
+        linear-gradient(150deg, #1c1510 0%, #0a0806 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glow-orb {
+      position: absolute;
+      width: 110px;
+      height: 180px;
+      background: radial-gradient(ellipse,
+          rgba(200, 146, 42, 0.3) 0%,
+          transparent 70%);
+      border-radius: 50%;
+      animation: glowPulse 3s ease-in-out infinite alternate;
+    }
+
+    .bottle-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 0.5em;
+      color: var(--light);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bottle-sub {
+      font-family: "Montserrat", sans-serif;
+      font-size: 7px;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      position: absolute;
+      bottom: -24px;
+      left: -24px;
+      width: 84px;
+      height: 84px;
+      border: 1px solid rgba(200, 146, 42, 0.28);
+      border-radius: 50%;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 14s linear infinite;
+    }
+
+    .badge-in {
+      text-align: center;
+      animation: spin 14s linear infinite reverse;
+    }
+
+    .badge-in span {
+      display: block;
+    }
+
+    .badge-in span:first-child {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .badge-in span:last-child {
+      font-family: "Montserrat", sans-serif;
+      font-size: 6.5px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: -8px;
+      right: 0;
+      display: flex;
+      gap: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.3s forwards;
+    }
+
+    .stat .num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat .lbl {
+      font-family: "Tajawal", sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* scrollbar */
+    .scroll-ind {
+      position: absolute;
+      bottom: 36px;
+      left: 49px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.5s forwards;
+    }
+
+    .scroll-bar {
+      width: 1px;
+      height: 52px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollAnim 2s ease-in-out infinite;
+    }
+
+    .scroll-ind span {
+      font-family: "Montserrat", sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      writing-mode: vertical-rl;
+    }
+
+    /* marquee */
+    .marquee {
+      border-top: 1px solid rgba(200, 146, 42, 0.08);
+      border-bottom: 1px solid rgba(200, 146, 42, 0.08);
+      padding: 13px 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .m-track {
+      display: flex;
+      gap: 0;
+      animation: marqueeAnim 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    .m-item {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      padding: 0 36px;
+      flex-shrink: 0;
+    }
+
+    .m-dot {
+      color: var(--accent);
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 100px 80px;
+    }
+
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .sec-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .sec-label span {
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .sec-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+
+    /* ── Why Choose ── */
+    .why {
+      background: var(--surface);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .why-card {
+      background: var(--card);
+      padding: 44px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .why-card:hover {
+      background: #201a14;
+    }
+
+    .why-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .why-card:hover::before {
+      opacity: 1;
+    }
+
+    .why-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-family: "Tajawal", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--light);
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .why-num {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: rgba(200, 146, 42, 0.07);
+      line-height: 1;
+    }
+
+    /* ── Products ── */
+    .products {
+      background: var(--bg);
+    }
+
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .prod-card {
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .prod-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .prod-img {
+      height: 260px;
+      background:
+        radial-gradient(ellipse at 40% 30%,
+          rgba(200, 146, 42, 0.2) 0%,
+          transparent 60%),
+        linear-gradient(160deg, #1e1810 0%, #0e0c08 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prod-img-glow {
+      position: absolute;
+      width: 80px;
+      height: 130px;
+      background: radial-gradient(ellipse,
+          rgba(200, 146, 42, 0.25) 0%,
+          transparent 70%);
+      border-radius: 50%;
+      animation: glowPulse 2.5s ease-in-out infinite alternate;
+    }
+
+    .prod-img span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      color: rgba(245, 243, 239, 0.6);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .prod-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: "Tajawal", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .prod-info {
+      padding: 24px;
+    }
+
+    .prod-info h3 {
+      font-family: "Tajawal", sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--light);
+      margin-bottom: 6px;
+    }
+
+    .prod-info .prod-en {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .prod-info p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .prod-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .prod-tag {
+      font-family: "Montserrat", sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      border: 1px solid rgba(200, 146, 42, 0.25);
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    /* ── Social Proof ── */
+    .proof {
+      background: var(--surface);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .proof-card {
+      background: var(--card);
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .proof-card::before {
+      content: "❝";
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px;
+      color: rgba(200, 146, 42, 0.15);
+      line-height: 1;
+    }
+
+    .proof-stars {
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .proof-text {
+      font-family: "Tajawal", sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--beige);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .proof-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .proof-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Tajawal", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--bg);
+    }
+
+    .proof-handle {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    /* ── CTA ── */
+    .cta-sec {
+      background: linear-gradient(135deg,
+          #150f08 0%,
+          #0a0806 50%,
+          #1a1008 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse,
+          rgba(200, 146, 42, 0.12) 0%,
+          transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-sec h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-sec h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .cta-sec p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #25d366;
+      color: #fff;
+      font-family: "Tajawal", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .wa-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+    }
+
+    .wa-btn svg {
+      flex-shrink: 0;
+    }
+
+    .map-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(200, 146, 42, 0.35);
+      color: var(--light);
+      font-family: "Tajawal", sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      padding: 16px 32px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .map-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Location ── */
+    .location {
+      background: var(--bg);
+    }
+
+    .loc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .loc-map {
+      background: var(--card);
+      height: 340px;
+      border: 1px solid rgba(200, 146, 42, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loc-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(0.6) contrast(1.1) brightness(0.7);
+      transition: filter 0.4s;
+    }
+
+    .loc-map:hover iframe {
+      filter: grayscale(0) contrast(1) brightness(1);
+    }
+
+    .loc-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .loc-info h3 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .loc-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .loc-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .loc-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(200, 146, 42, 0.1);
+      border: 1px solid rgba(200, 146, 42, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .loc-item-text h5 {
+      font-family: "Tajawal", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--light);
+      margin-bottom: 4px;
+    }
+
+    .loc-item-text p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid rgba(200, 146, 42, 0.1);
+      padding: 48px 80px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .footer-copy {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* WhatsApp Float */
+    .wa-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
+      text-decoration: none;
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+      animation: waPulse 2s ease-in-out infinite;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+    }
+
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
+      }
+
+      50% {
+        box-shadow:
+          0 8px 32px rgba(37, 211, 102, 0.55),
+          0 0 0 12px rgba(37, 211, 102, 0.08);
+      }
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      from {
+        opacity: 0.55;
+        transform: scale(0.88);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.12);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes scrollAnim {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes marqueeAnim {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Hamburger Button ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 28px;
+      height: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--light);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4.5px, 4.5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(4.5px, -4.5px);
+    }
+
+    /* ── Mobile Nav Overlay ── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      background: rgba(10, 8, 6, 0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+    }
+
+    .mobile-nav.open a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-nav.open a:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .mobile-nav.open a:nth-child(2) {
+      transition-delay: 0.15s;
+    }
+
+    .mobile-nav.open a:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .mobile-nav.open a:nth-child(4) {
+      transition-delay: 0.25s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-nav .mobile-wa {
+      color: var(--accent);
+      border: 1px solid rgba(200, 146, 42, 0.4);
+      padding: 12px 32px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+
+    .mobile-nav .mobile-wa:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      body {
+        cursor: auto;
+      }
+
+      .cur,
+      .cur-r {
+        display: none;
+      }
+
+      nav {
+        padding: 20px 24px;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .nav-wa {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 90px 24px 60px;
+        gap: 40px;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      section {
+        padding: 70px 24px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prod-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .loc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .m-track {
+        animation-duration: 18s;
+      }
+
+      .m-item {
+        font-size: 12px;
+        padding: 0 24px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+        padding: 40px 24px 28px;
+      }
+
+      .vline-l,
+      .vline-r {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .prod-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .m-track {
+        animation-duration: 14s;
+      }
+
+      .hero-title {
+        font-size: clamp(40px, 10vw, 60px);
+      }
+    }
+
+    /* ── Subscribe / Waitlist ── */
+    .subscribe-sec {
+      background: var(--surface);
+      padding: 80px 48px;
+      text-align: center;
+      border-top: 1px solid rgba(200, 146, 42, 0.1);
+      position: relative;
+    }
+
+    .subscribe-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 48px;
+      border: 1px solid rgba(200, 146, 42, 0.15);
+      border-radius: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .subscribe-sec h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--light);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .subscribe-sec p {
+      font-family: "Tajawal", sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .subscribe-input {
+      background: rgba(10, 8, 6, 0.5);
+      border: 1px solid rgba(200, 146, 42, 0.2);
+      padding: 16px;
+      color: var(--light);
+      font-family: "Tajawal", sans-serif;
+      font-size: 15px;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s;
+      text-align: right;
+    }
+
+    .subscribe-input::placeholder {
+      color: var(--muted);
+    }
+
+    .subscribe-input:focus {
+      border-color: var(--accent);
+    }
+
+    .subscribe-btn {
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      padding: 16px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: opacity 0.3s;
+    }
+
+    .subscribe-btn:hover {
+      opacity: 0.9;
+    }
+
+    .subscribe-msg {
+      margin-top: 16px;
+      font-family: "Tajawal", sans-serif;
+      font-size: 14px;
+      display: none;
+    }
+
+    .subscribe-msg.success {
+      color: #81c784;
+      display: block;
+    }
+
+    .subscribe-msg.error {
+      color: #e57373;
+      display: block;
+    }
+
+    /* Floating Banner */
+    .floating-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translate(-50%, 150%);
+      background: var(--card);
+      border: 1px solid var(--accent);
+      padding: 16px 48px 16px 24px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      opacity: 0;
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s;
+    }
+
+    .floating-banner.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    .floating-banner span {
+      font-family: "Tajawal", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--light);
+      white-space: nowrap;
+    }
+
+    .banner-close {
+      position: absolute;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .banner-close:hover {
+      color: var(--light);
+    }
+
+    @media (max-width: 600px) {
+      .subscribe-inner {
+        padding: 32px 24px;
+      }
+
+      .subscribe-sec h3 {
+        font-size: 24px;
+      }
+
+      .floating-banner {
+        width: 90%;
+        justify-content: center;
+        padding: 16px 36px 16px 16px;
+      }
+
+      .floating-banner span {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cur" id="cur"></div>
+  <div class="cur-r" id="cur-r"></div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/201XXXXXXXXX?text=مرحبا، عايز أعرف أكتر عن عطور مانجو" class="wa-float" target="_blank"
+    title="واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-logo">M A N<span style="display:inline-block;transform:scaleX(-1);">G</span> O</a>
+    <ul class="nav-links">
+      <li><a href="#products">عطورنا</a></li>
+      <li><a href="#why">ليه مانجو؟</a></li>
+      <li><a href="#location">فين نلاقيكم؟</a></li>
+    </ul>
+    <a href="https://wa.me/201XXXXXXXXX" class="nav-wa" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+      اطلب دلوقتي
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#products" class="mobile-nav-link">عطورنا</a>
+    <a href="#why" class="mobile-nav-link">ليه مانجو؟</a>
+    <a href="#location" class="mobile-nav-link">فين نلاقيكم؟</a>
+    <a href="https://wa.me/201XXXXXXXXX" class="mobile-wa" target="_blank">اطلب دلوقتي</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="grain"></div>
+    <div class="vline vline-l"></div>
+    <div class="vline vline-r"></div>
+
+    <div class="scroll-ind">
+      <div class="scroll-bar"></div>
+      <span>Scroll</span>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="eyebrow">
+          <div class="eyebrow-line"></div>
+          <span>Handcrafted · 10th of Ramadan</span>
+        </div>
+
+        <h1 class="hero-title">Your Scent,<br />Your <em>Identity.</em></h1>
+
+        <p class="hero-ar">عطرك… هويتك</p>
+
+        <div class="warning-pill">
+          <span>⚠️</span>
+          <p><strong>تحذير رسمي:</strong> اللي جرّب مانجو بيرجعله تاني ‼️</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary"><span>اكتشف عطورنا</span></a>
+          <a href="https://wa.me/201XXXXXXXXX" class="btn-ghost" target="_blank">اطلب عطرك المخصص ←</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="bottle-wrap">
+          <div class="bottle-inner">
+            <div class="glow-orb"></div>
+            <img src="mango.jpg" alt="Mango Perfume Logo"
+              style="max-width:80%;max-height:80%;object-fit:contain;position:relative;z-index:2;" />
+          </div>
+          <div class="badge">
+            <div class="badge-in"><span>✦</span><span>Est. Egypt</span></div>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="num">300+</span><span class="lbl">عطر فاخر</span>
+          </div>
+          <div class="stat">
+            <span class="num">119K</span><span class="lbl">مشاهدة</span>
+          </div>
+          <div class="stat">
+            <span class="num">100%</span><span class="lbl">أصلي</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="m-track">
+      <span class="m-item">سُكَّر <span class="m-dot">✦</span></span>
+      <span class="m-item">Le Male Elixir <span class="m-dot">✦</span></span>
+      <span class="m-item">الثائر <span class="m-dot">✦</span></span>
+      <span class="m-item">Bleu de Chanel <span class="m-dot">✦</span></span>
+      <span class="m-item">عود فاخر <span class="m-dot">✦</span></span>
+      <span class="m-item">Custom Blends <span class="m-dot">✦</span></span>
+      <span class="m-item">هدايا رمضان <span class="m-dot">✦</span></span>
+      <span class="m-item">Vanilla Musk <span class="m-dot">✦</span></span>
+      <span class="m-item">سُكَّر <span class="m-dot">✦</span></span>
+      <span class="m-item">Le Male Elixir <span class="m-dot">✦</span></span>
+      <span class="m-item">الثائر <span class="m-dot">✦</span></span>
+      <span class="m-item">Bleu de Chanel <span class="m-dot">✦</span></span>
+      <span class="m-item">عود فاخر <span class="m-dot">✦</span></span>
+      <span class="m-item">Custom Blends <span class="m-dot">✦</span></span>
+      <span class="m-item">هدايا رمضان <span class="m-dot">✦</span></span>
+      <span class="m-item">Vanilla Musk <span class="m-dot">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ── WHY ── -->
+  <section class="why reveal" id="why">
+    <div class="sec-label">
+      <div class="sec-line"></div>
+      <span>Why Mango</span>
+    </div>
+    <h2 class="sec-title">ليه مانجو بيرفيوم؟</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-num">01</span><span class="why-icon">Fixed</span>
+        <h3>ثبات طول اليوم</h3>
+        <p>
+          عطورنا بتفضل معاك من الصبح لآخر النهار — مش بس ساعتين وخلاص. ثبات
+          حقيقي مش وعود.
+        </p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">02</span><span class="why-icon">Just Ask</span>
+        <h3>أكتر من 300 عطر</h3>
+        <p>
+          من العود الأصيل للمسك الناعم — عندنا كل حاجة. ولو ما لقيتش اللي
+          بتدور عليه، بنعمهولك.
+        </p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">03</span><span class="why-icon">Gift</span>
+        <h3>هدايا وتغليف فاخر</h3>
+        <p>
+          مناسبة عيد ميلاد، جواز، رمضان — كل مناسبة عندها عرض خاص. مانجو
+          بتفرحهم معاك.
+        </p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">04</span><span class="why-icon">Safe</span>
+        <h3>كحول طبي آمن 100%</h3>
+        <p>
+          بنكون واضحين معاكم — بنستخدم كحول طبي مفيش منه أي ضرر. صحتكم أهم من
+          أي حاجة.
+        </p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">05</span><span class="why-icon">🇪🇬</span>
+        <h3>صنع في مصر بفخر</h3>
+        <p>
+          مش بضاعة مستوردة — إحنا مصريين بنصنع لمصريين. جودة عالمية بسعر في
+          متناول الجميع.
+        </p>
+      </div>
+      <div class="why-card">
+        <span class="why-num">06</span><span class="why-icon">Fast</span>
+        <h3>خدمة دليفري سريعة</h3>
+        <p>
+          اطلب من بيتك ووصّللك — التوصيل متاح وبنحرص إن طلبك يوصلك سريع وآمن.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS ── -->
+  <section class="products reveal" id="products">
+    <div class="sec-label">
+      <div class="sec-line"></div>
+      <span>Our Collection</span>
+    </div>
+    <h2 class="sec-title">أبرز عطورنا</h2>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-glow"></div>
+          <img src="product1.jpg" alt="سُكَّر"
+            style="width:100%;height:100%;object-fit:cover;position:relative;z-index:2;" />
+        </div>
+        <div class="prod-badge">الأكثر مبيعاً</div>
+        <div class="prod-info">
+          <h3>سُكَّر</h3>
+          <div class="prod-en">SUKAR</div>
+          <p>
+            لمسة حلوة من الفانيليا والمسك — الريحة اللي بتخليكي بسكوتة ✨ للي
+            بتحب الإحساس الناعم والأنثوي.
+          </p>
+          <div class="prod-tags">
+            <span class="prod-tag">Vanilla</span><span class="prod-tag">Musk</span><span class="prod-tag">Sweet</span>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-glow"></div>
+          <img src="product2.jpg" alt="Le Male Elixir"
+            style="width:100%;height:100%;object-fit:cover;position:relative;z-index:2;" />
+        </div>
+        <div class="prod-badge" style="background: var(--wood)">للرجال</div>
+        <div class="prod-info">
+          <h3>Le Male Elixir</h3>
+          <div class="prod-en">BOLD · LONG-LASTING</div>
+          <p>
+            عطر رجالي جريء وثابت — راجع Hashoma وقالها صريح: "مش هتندم". قوي،
+            مميز، وبيفرق.
+          </p>
+          <div class="prod-tags">
+            <span class="prod-tag">Woody</span><span class="prod-tag">Bold</span><span
+              class="prod-tag">Long-lasting</span>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="prod-img-glow"></div>
+          <img src="product3.jpg" alt="الثائر"
+            style="width:100%;height:100%;object-fit:cover;position:relative;z-index:2;" />
+        </div>
+        <div class="prod-info">
+          <h3>الثائر</h3>
+          <div class="prod-en">AL-THA'ER</div>
+          <p>
+            من أقوى عطورنا وغني عن التعريف — اسمه بيقول كل حاجة. موجود دلوقتي
+            في ستورنا بـ CR7.
+          </p>
+          <div class="prod-tags">
+            <span class="prod-tag">Oud</span><span class="prod-tag">Oriental</span><span class="prod-tag">Intense</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px">
+      <a href="https://wa.me/201XXXXXXXXX?text=عايز أشوف الكولكشن كامل" class="btn-primary" target="_blank"><span>شوف
+          الكولكشن كامل (300+ عطر)</span></a>
+    </div>
+  </section>
+
+  <!-- ── SOCIAL PROOF ── -->
+  <section class="proof reveal">
+    <div class="sec-label">
+      <div class="sec-line"></div>
+      <span>Real Reviews</span>
+    </div>
+    <h2 class="sec-title">عملاؤنا بيقولوا إيه؟</h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">
+          ربنا يوفقك ويقدرك ان شاء الله — العطر غير ومحتاج يفضل موجود دايماً
+          ♥️
+        </p>
+        <div class="proof-user">
+          <div class="proof-avatar">ف</div>
+          <span class="proof-handle">@fares__mohamed_12__</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">
+          مشاء الله والله هتكسر الدنيا — ريحة تانية خالص وثبات أكتر من
+          المتوقع!
+        </p>
+        <div class="proof-user">
+          <div class="proof-avatar">ن</div>
+          <span class="proof-handle">@nuurhanzidan</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">
+          بالتوفيق يا حبيبي — اللي جرّب مانجو فعلاً مش بيقدر يبعد عنه تاني ❤️
+        </p>
+        <div class="proof-user">
+          <div class="proof-avatar">ك</div>
+          <span class="proof-handle">@khalid.shafeq</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">
+          بالنجاح والتوفيق بإذن اللّه يا أخويا — العطر وقع في قلبي من أول ما
+          حسيت بريحته ✨
+        </p>
+        <div class="proof-user">
+          <div class="proof-avatar">ش</div>
+          <span class="proof-handle">@shady.gamal95</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-sec reveal">
+    <div class="cta-glow"></div>
+    <h2>اللي جرّب مانجو<br /><em>بيرجعله تاني ‼️</em></h2>
+    <p>تواصل معانا دلوقتي وابدأ رحلتك مع عطرك المميز</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/201XXXXXXXXX?text=مرحبا، عايز أطلب من مانجو بيرفيوم" class="wa-btn" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        اطلب على واتساب
+      </a>
+      <a href="#location" class="map-btn">📍 زورونا في الستور</a>
+    </div>
+  </section>
+
+  <!-- ── LOCATION ── -->
+  <section class="location reveal" id="location">
+    <div class="sec-label">
+      <div class="sec-line"></div>
+      <span>Find Us</span>
+    </div>
+    <h2 class="sec-title">فين نلاقيكم؟</h2>
+    <div class="loc-grid">
+      <div class="loc-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1000!2d31.7439670!3d30.3046680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1711284000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="loc-info">
+        <h3>زورونا في<br /><em>العاشر من رمضان</em></h3>
+        <div class="loc-details">
+          <div class="loc-item">
+            <div class="loc-icon">📍</div>
+            <div class="loc-item-text">
+              <h5>العنوان</h5>
+              <p>
+                مول الداون تاون — الدور الأول<br />بجوار حلواني العبد<br />العاشر
+                من رمضان، الشرقية
+              </p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">🕐</div>
+            <div class="loc-item-text">
+              <h5>مواعيد العمل</h5>
+              <p>طول اليوم</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">🏪</div>
+            <div class="loc-item-text">
+              <h5>فرع CR7</h5>
+              <p>متاح كمان في CR7<br />بتشكيلة من أقوى 7 عطور</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">🛵</div>
+            <div class="loc-item-text">
+              <h5>دليفري</h5>
+              <p>التوصيل متاح لكل المناطق<br />تواصل معانا على واتساب</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Subscribe Section ── -->
+  <section class="subscribe-sec" id="subscribe">
+    <div class="subscribe-inner">
+      <h3>كن أول المشتركين — واحصل على خصم 20% على أول طلب</h3>
+      <p>500+ شخص اشتركوا بالفعل</p>
+      <form class="subscribe-form" id="subForm">
+        <input type="text" id="subName" class="subscribe-input" placeholder="اسمك" required />
+        <input type="tel" id="subPhone" class="subscribe-input" placeholder="رقم موبايلك" required dir="rtl" />
+        <button type="submit" class="subscribe-btn" id="subBtn">اشترك الآن</button>
+        <div id="subMsg" class="subscribe-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Floating Banner -->
+  <div class="floating-banner" id="floatBanner">
+    <span>اشترك واحصل على عرض خاص ✨</span>
+    <button class="banner-close" id="closeBanner">&times;</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-logo">Mango</span>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/profile.php?id=61571257122042" target="_blank">Facebook</a>
+      <a href="https://instagram.com/mangooo.perfume" target="_blank">Instagram</a>
+      <a href="https://wa.me/201XXXXXXXXX" target="_blank">WhatsApp</a>
+    </div>
+    <span class="footer-copy">© 2025 Mango Perfume · صُنع في مصر بفخر</span>
+  </footer>
+
+  <script>
+    // Custom cursor
+    const cur = document.getElementById("cur"),
+      cr = document.getElementById("cur-r");
+    let mx = 0,
+      my = 0,
+      rx = 0,
+      ry = 0;
+    document.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      cur.style.left = mx + "px";
+      cur.style.top = my + "px";
+    });
+    (function loop() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      cr.style.left = rx + "px";
+      cr.style.top = ry + "px";
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll("a,button").forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cr.style.width = "56px";
+        cr.style.height = "56px";
+      });
+      el.addEventListener("mouseleave", () => {
+        cr.style.width = "34px";
+        cr.style.height = "34px";
+      });
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.12 },
+    );
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    // Close mobile nav on link click
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Subscribe & Banner Logic
+    const SHEET_URL = "";
+    const floatBanner = document.getElementById("floatBanner");
+    const closeBanner = document.getElementById("closeBanner");
+    const subForm = document.getElementById("subForm");
+    const subMsg = document.getElementById("subMsg");
+    const subBtn = document.getElementById("subBtn");
+
+    let bannerDismissed = sessionStorage.getItem("mango_banner_dismissed");
+    let userSubscribed = sessionStorage.getItem("mango_user_subscribed");
+    let pageLoadTime = Date.now();
+
+    function showBanner() {
+      if (!bannerDismissed && !userSubscribed) {
+        floatBanner.classList.add("show");
+      }
+    }
+
+    window.addEventListener("scroll", () => {
+      let scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      let timePassed = (Date.now() - pageLoadTime) > 3000;
+      if (scrollPercent > 40 && timePassed) {
+        showBanner();
+      }
+    });
+
+    closeBanner.addEventListener("click", (e) => {
+      e.stopPropagation();
+      floatBanner.classList.remove("show");
+      sessionStorage.setItem("mango_banner_dismissed", "true");
+      bannerDismissed = true;
+    });
+
+    floatBanner.addEventListener("click", () => {
+      document.getElementById("subscribe").scrollIntoView({ behavior: "smooth" });
+      floatBanner.classList.remove("show");
+    });
+
+    subForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("subName").value.trim();
+      const phone = document.getElementById("subPhone").value.trim();
+
+      if (!name || !phone) {
+        subMsg.textContent = "من فضلك ادخل اسمك ورقمك";
+        subMsg.className = "subscribe-msg error";
+        return;
+      }
+
+      subBtn.textContent = "جاري التسجيل...";
+      subBtn.disabled = true;
+
+      try {
+        if (SHEET_URL) {
+          await fetch(SHEET_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, phone })
+          });
+        }
+        // Show success message regardless of URL presence for demo
+        subMsg.textContent = "تم التسجيل! هنتواصل معاك قريباً ♥️";
+        subMsg.className = "subscribe-msg success";
+        sessionStorage.setItem("mango_user_subscribed", "true");
+        userSubscribed = true;
+        subForm.reset();
+        floatBanner.classList.remove("show");
+      } catch (err) {
+        subMsg.textContent = "حدث خطأ، حاول مرة أخرى.";
+        subMsg.className = "subscribe-msg error";
+      } finally {
+        subBtn.textContent = "اشترك الآن";
+        subBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+
+</html>
